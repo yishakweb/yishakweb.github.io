@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProDash | Admin Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CORE STYLES --- */
+        :root {
+            --sidebar-width: 260px;
+            --primary: #6366f1; /* Indigo */
+            --bg-main: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #22c55e;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            display: flex; /* Flex used for Sidebar + Main layout */
+        }
+
+        /* --- SIDEBAR --- */
+        aside {
+            width: var(--sidebar-width);
+            background: #0f172a; /* Deep Slate */
+            height: 100vh;
+            color: white;
+            position: fixed;
+            padding: 1.5rem;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #94a3b8;
+        }
+
+        .nav-item.active, .nav-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: white;
+        }
+
+        /* --- MAIN CONTENT --- */
+        main {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* Top Navbar */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: var(--bg-white);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .stat-card h3 {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+        }
+
+        .stat-card .value {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .trend {
+            font-size: 0.875rem;
+            color: var(--success);
+        }
+
+        /* Data Table & Form Section */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .card-box {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 1024px) {
+            .content-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            aside { display: none; }
+            main { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div class="brand">ProDash</div>
+        <ul class="nav-menu">
+            <li class="nav-item active">Dashboard</li>
+            <li class="nav-item">Analytics</li>
+            <li class="nav-item">Orders</li>
+            <li class="nav-item">Customers</li>
+            <li class="nav-item">Settings</li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="top-nav">
+            <input type="text" placeholder="Search data..." style="width: 250px;">
+            <div class="user-profile">
+                <span>Alex Johnson</span>
+                <div class="avatar"></div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <div class="value">$45,231.89</div>
+                <div class="trend">↑ 12% from last month</div>
+            </div>
+            <div class="stat-card">
+                <h3>Active Users</h3>
+                <div class="value">2,350</div>
+                <div class="trend">↑ 5% since yesterday</div>
+            </div>
+            <div class="stat-card">
+                <h3>Conversion Rate</h3>
+                <div class="value">4.8%</div>
+                <div class="trend">↑ 2.1% from last week</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="card-box">
+                <h2>Recent Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Marcellus Wallace</td>
+                            <td><span style="color: var(--success);">Completed</span></td>
+                            <td>Oct 24, 2023</td>
+                            <td>$120.00</td>
+                        </tr>
+                        <tr>
+                            <td>Mia Wallace</td>
+                            <td><span style="color: var(--primary);">Pending</span></td>
+                            <td>Oct 23, 2023</td>
+                            <td>$850.00</td>
+                        </tr>
+                        <tr>
+                            <td>Vincent Vega</td>
+                            <td><span style="color: var(--success);">Completed</span></td>
+                            <td>Oct 22, 2023</td>
+                            <td>$45.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-box">
+                <h2>Quick Action</h2>
+                <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">Create a new support ticket.</p>
+                <form>
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select>
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="e.g. Server Issue">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea rows="4" style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 10px;"></textarea>
+                    </div>
+                    <button type="button" class="btn-primary">Submit Ticket</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
