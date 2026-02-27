@@ -1,0 +1,75 @@
+/* 1. Body Styling */
+body {
+    background-color: lightgrey;
+    font-family: verdana;
+    color: blue;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 2. Header 1 Styling */
+h1 {
+    color: rgb(11, 15, 11);
+    margin: 0;
+}
+
+/* 3. Paragraph Styling */
+p {
+    text-align: justify;
+}
+
+/* 4. Navigation Styling (List, li, and a) */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li a {
+    display: block;      /* Makes the whole area clickable */
+    color: black;        /* Text color black as per guide */
+    padding: 20px 40px;  /* Spacing as per guide */
+    text-decoration: none;
+    float: left;
+}
+
+/* Visual feedback when hovering over a link */
+li a:hover {
+    background-color: #f0f0f0;
+    color: green;
+}
+
+/* Header and Footer Background */
+header, footer {
+    background-color: #777d6a;
+}
+
+/* Layout helpers for the screenshot look */
+.top-bar, .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: white; /* Header background in screenshot is white */
+}
+
+.hero {
+    background-color: cyan;
+    padding: 60px 20px;
+    text-align: center;
+    color: black;
+}
+
+.info-table {
+    margin: 30px auto;
+    background-color: #bbbbbb;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+.info-table td, .info-table th {
+    border: 1px solid #555;
+    padding: 15px;
+    text-align: left;
+}
