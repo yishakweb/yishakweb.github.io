@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign up — Study Smarter</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span> Study Smarter</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-ghost">Log in</a>
+        <a href="register.html" class="btn btn-primary">Sign up</a>
+      </div>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section style="padding:70px 0;">
+  <div class="wrap" style="text-align:center; max-width:520px; margin:0 auto 40px;">
+    <div class="eyebrow" style="justify-content:center;">Join for free</div>
+    <h1>Create your account</h1>
+    <p>Takes less than a minute — no payment details required.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="form-shell reveal">
+      <div class="form-status" id="reg-status"></div>
+      <form id="register-form" novalidate>
+        <div class="field">
+          <label for="rg-name">Full name</label>
+          <input type="text" id="rg-name" name="name" autocomplete="name">
+          <div class="error"></div>
+        </div>
+        <div class="field">
+          <label for="rg-email">Email address</label>
+          <input type="email" id="rg-email" name="email" autocomplete="email">
+          <div class="error"></div>
+        </div>
+        <div class="field">
+          <label for="rg-password">Password</label>
+          <input type="password" id="rg-password" name="password" autocomplete="new-password">
+          <div class="error"></div>
+        </div>
+        <div class="field">
+          <label for="rg-confirm">Confirm password</label>
+          <input type="password" id="rg-confirm" name="confirm" autocomplete="new-password">
+          <div class="error"></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create account</button>
+        <p class="form-note">Already registered? <a href="login.html" class="hl">Log in</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Study Smarter. Student coursework project.</span>
+      <span>Built with HTML, CSS &amp; JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

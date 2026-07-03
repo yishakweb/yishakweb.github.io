@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Study Smarter</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span> Study Smarter</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-ghost">Log in</a>
+        <a href="register.html" class="btn btn-primary">Sign up</a>
+      </div>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section style="padding:60px 0 20px;">
+  <div class="wrap">
+    <div class="eyebrow">All guides</div>
+    <h1 style="max-width:20ch;">Every technique, searchable by topic.</h1>
+    <p style="max-width:56ch;">Filter by category or search by keyword — the list below updates instantly as you type, all in the browser.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px;">
+  <div class="wrap">
+    <div class="blog-controls">
+      <input type="search" id="blog-search" placeholder="Search articles…" aria-label="Search articles">
+      <div class="chip-row" id="category-chips"></div>
+    </div>
+    <div class="grid-3" id="blog-grid"></div>
+    <div class="empty-state" id="empty-state">
+      <h3>No articles match your search</h3>
+      <p>Try a different keyword or select "All" to clear the category filter.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="color:var(--paper)"><span class="brand-mark"></span> Study Smarter</a>
+        <p style="margin-top:14px; max-width:32ch; font-size:0.9rem;">Research-backed study techniques for secondary and university students, published weekly.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <ul>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="register.html">Sign up</a></li>
+          <li><a href="admin.html">Admin panel</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Study Smarter. Student coursework project.</span>
+      <span>Built with HTML, CSS &amp; JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin panel — Study Smarter</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span> Study Smarter</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-ghost">Log in</a>
+        <a href="register.html" class="btn btn-primary">Sign up</a>
+      </div>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section style="padding:60px 0 100px;">
+  <div class="wrap" id="admin-root">
+    <div class="admin-bar">
+      <div>
+        <div class="eyebrow">Admin panel</div>
+        <h1 style="margin-bottom:4px;">Signed in as <span id="admin-name"></span></h1>
+        <p style="margin:0;">Live data pulled from this browser's local storage.</p>
+      </div>
+      <button class="btn btn-ghost" id="logout-btn" type="button">Log out</button>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:50px;">
+      <div class="feature">
+        <span class="badge">Messages</span>
+        <h3 id="stat-messages" style="font-size:2rem; margin-top:12px;">0</h3>
+        <p>Contact form submissions</p>
+      </div>
+      <div class="feature">
+        <span class="badge">Users</span>
+        <h3 id="stat-users" style="font-size:2rem; margin-top:12px;">0</h3>
+        <p>Registered accounts</p>
+      </div>
+      <div class="feature">
+        <span class="badge">Content</span>
+        <h3 id="stat-articles" style="font-size:2rem; margin-top:12px;">0</h3>
+        <p>Published articles</p>
+      </div>
+    </div>
+
+    <div class="eyebrow">Inbox</div>
+    <h2 style="margin-bottom:24px;">Contact messages</h2>
+    <div id="message-list"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Study Smarter. Student coursework project.</span>
+      <span>Built with HTML, CSS &amp; JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
