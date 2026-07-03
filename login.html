@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Study Smarter</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span> Study Smarter</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-ghost">Log in</a>
+        <a href="register.html" class="btn btn-primary">Sign up</a>
+      </div>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section style="padding:70px 0;">
+  <div class="wrap" style="text-align:center; max-width:520px; margin:0 auto 40px;">
+    <div class="eyebrow" style="justify-content:center;">Welcome back</div>
+    <h1>Log in to your account</h1>
+    <p>Demo admin account: <strong>admin@studysmarter.edu</strong> / <strong>admin123</strong></p>
+  </div>
+
+  <div class="wrap">
+    <div class="form-shell reveal">
+      <div class="form-status" id="login-status"></div>
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="lg-email">Email address</label>
+          <input type="email" id="lg-email" name="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="lg-password">Password</label>
+          <input type="password" id="lg-password" name="password" autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        <p class="form-note">Don't have an account? <a href="register.html" class="hl">Create one</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Study Smarter. Student coursework project.</span>
+      <span>Built with HTML, CSS &amp; JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
